@@ -1,5 +1,5 @@
 underscore = require 'underscore'
-$ = require 'jquery'
+cherrio = require 'cheerio'
 varPath = require 'path'
 
 module.exports = class StaticUnderscoreCompliler
@@ -17,8 +17,8 @@ module.exports = class StaticUnderscoreCompliler
       varRoot           = @config.plugins?.static_underscore?.varRoot or "window"
       templateSettings  = @config.plugins?.underscore
       
-      $data = $ data
-      varName = $data.attr('id')
+      $data             = cherrio.load data
+      varName           = $data.attr('id')
       varResult         = underscore.template($data.html(), null, templateSettings).source
 
       content = varRoot + '.' + varName + " = " + varResult + ";\n\n"
