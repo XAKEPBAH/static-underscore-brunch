@@ -32,11 +32,11 @@ templates:
 You can then place your `templates.js` below your `vendor.js` and above your `apps.js`
 
 ### Configuration options
-Output is based on plugins.static_underscore.output in config.coffee:
+variable name where to place output specified in plugins.static_underscore.varName in brunch.config.coffee:
 ```coffeescript
 plugins:
 	static_underscore:
- 		output: 'source'
+ 		varName: 'window.templates'
 ```
 Output options are:
 
