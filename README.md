@@ -36,7 +36,7 @@ variable name where to place output specified in plugins.static_underscore.varNa
 ```coffeescript
 plugins:
 	static_underscore:
- 		varName: 'window.templates'
+ 		varRoot: 'window.templates'
 ```
 Output options are:
 
