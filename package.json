@@ -1,6 +1,6 @@
 {
   "name": "static-underscore-brunch",
-  "version": "1.4.5",
+  "version": "1.5.0",
   "keywords": [
     "brunch",
     "underscore"
@@ -21,11 +21,12 @@
     "test": "node setup.js test"
   },
   "engines": {
-    "node": "~0.6.10 || 0.8 || 0.9"
+    "node": ">0.10.0"
   },
   "dependencies": {
-    "coffee-script": "1.3.3",
-    "underscore": "1.4"
+    "coffee-script": "1.7.1",
+    "underscore": "1.6.0",
+    "jquery": "*"
   },
   "devDependencies": {
     "mocha": "1.3.2",

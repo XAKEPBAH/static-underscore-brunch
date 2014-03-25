@@ -10,6 +10,12 @@ Pick a plugin version that corresponds to your minor (y) brunch version.
 If you want to use git version of plugin, add
 `"static-underscore-brunch": "git+ssh://git@github.com:slattery/static-underscore-brunch.git"`.
 
+Using "script" format of underscore templates:
+
+```
+<script type="text/template" id="template-test"> Hello <%=world%> </script>
+```
+
 ### Useful convensions
 Brunch concatenates all your files in `app/`, `test/` and `vendor/` directories to two files by default:
 
