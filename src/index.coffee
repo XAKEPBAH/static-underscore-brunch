@@ -18,10 +18,10 @@ module.exports = class StaticUnderscoreCompliler
       templateSettings  = @config.plugins?.underscore
       
       $data             = cherrio.load data
-      varName           = $data.attr('id')
+      varName           = $data('script').attr('id')
       varResult         = underscore.template($data.html(), null, templateSettings).source
 
-      content = varRoot + '.' + varName + " = " + varResult + ";\n\n"
+      content = varRoot + "['" + varName + "'] = " + varResult + ";\n\n"
       return result = content
     catch err
       return error = err
