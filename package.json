@@ -26,8 +26,7 @@
   "dependencies": {
     "coffee-script": "1.7.1",
     "underscore": "1.6.0",
-    "cheerio": "*",
-    "underscore.string": "~2.3.3"
+    "cheerio": "*"
   },
   "devDependencies": {
     "mocha": "1.3.2",

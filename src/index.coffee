@@ -1,5 +1,4 @@
 underscore = require 'underscore'
-underscore.str = require('underscore.string');
 $ = require 'cheerio'
 varPath = require 'path'
 
@@ -25,7 +24,7 @@ module.exports = class StaticUnderscoreCompliler
       $data('script').each (i, elem) ->
         
         varName           = $(this).attr('id')
-        varResult         = underscore.template(underscore.str.trim($(this).html()), null, templateSettings).source
+        varResult         = 'function(){return $.trim(' + underscore.template($(this).html(), null, templateSettings).source + '.apply(this, arguments))}'
 
         content += varRoot + "['" + varName + "'] = " + varResult + ";\n\n"
       return result = content
