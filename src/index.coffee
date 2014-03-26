@@ -1,4 +1,5 @@
 underscore = require 'underscore'
+underscore.str = require 'underscore.string'
 cherrio = require 'cheerio'
 varPath = require 'path'
 
@@ -19,7 +20,7 @@ module.exports = class StaticUnderscoreCompliler
       
       $data             = cherrio.load data
       varName           = $data('script').attr('id')
-      varResult         = underscore.template($data.html(), null, templateSettings).source
+      varResult         = underscore.str.trim underscore.template($data.html(), null, templateSettings).source
 
       content = varRoot + "['" + varName + "'] = " + varResult + ";\n\n"
       return result = content
