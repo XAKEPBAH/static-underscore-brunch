@@ -16,13 +16,12 @@ var execute = function(pathParts, params, callback) {
     console.log(stdout.toString());
   });
 };
-
 if (mode === 'postinstall') {
   fsExists(sysPath.join(__dirname, 'lib'), function(exists) {
     if (exists) return;
-    execute(['node_modules', 'coffee-script', 'bin', 'coffee'], '-o lib/ src/');
+    execute([require.resolve('coffee-script'), '..', '..','..', 'bin', 'coffee'], '-o lib/ src/');
   });
 } else if (mode === 'test') {
-  execute(['node_modules', 'mocha', 'bin', 'mocha'],
+  execute([require.resolve('mocha')],
     '--require test/common.js --colors');
 }
